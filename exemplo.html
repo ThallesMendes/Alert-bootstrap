@@ -1,0 +1,42 @@
+<html>
+	<head>
+	<meta charset="utf-8" />
+	<title>Alert Exemplo</title>
+	<link href='css/alerta.css' rel='stylesheet' type='text/css' media='all'/> 
+	<link href='css/bootstrap.css' rel='stylesheet' type='text/css' media='all'/> 
+	
+	
+	<script type='text/javascript' src='js/jquery-1.10.2.min.js'></script>
+	<script type='text/javascript' src='js/bootstrap.min.js'></script>
+	<script type='text/javascript' src='js/alerta.js'></script>
+	</head>
+<body>
+<a href="#" id="exemplo">Alerta</a><br>
+<a href="#" id="exemplo2">Confirma</a><br>
+<a href="#" id="exemplo3">Personalizar</a><br>
+
+</body>
+<script type="text/javascript">
+$(function() {
+	$('#exemplo').click(function(){
+		$.Alert('Teste Alerta');
+	});
+	$('#exemplo2').click(function(){
+		$.Alert('Teste Confirma',{
+			style:'danger',
+			tipo: 'C',
+			acOK:function(){
+				alert('OK');
+			},
+			acCancelar:function(){
+				alert('Cancel');
+			}
+		});
+	});
+	$('#exemplo3').click(function(){
+		$.Alert('Teste personalizado',{style:'success',OK:'Sim',Cancelar:'Não desejo'});
+	});
+	
+});
+</script>
+</html>

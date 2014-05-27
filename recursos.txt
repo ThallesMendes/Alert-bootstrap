@@ -1,0 +1,42 @@
+Documentação Alert
+Thalles Mendes
+27/05/2014 17:00
+Plugin alert foi criado para substituir o a função alert() do javascript
+
+---------Dependências---------
+css/alerta.css 
+css/bootstrap.css *
+js/alerta.js
+js/jquery-1.10.2.min.js *
+js/bootstrap.min.js *
+
+* Scripts e styles de terceiros podem ter suas versões alteradas sem problema algum, desde que sejam compativeis com o plugin
+
+---------Opções---------------
+
+style 		- string - default: info - Segue o padrao bootstrap, que vareia de acordo com o template usado
+tipo  		- string - default:A - A: Apenas para Alert, C: Para janelas de confirmação
+OK	  		- string - default: OK - Texto do botão OK
+Cancelar 	- string - default: Cancelar - Texto do botão Cancelar
+acOK		- function - default: return true - Função a ser executada caso o botão OK seja clicado
+acCancelar  - function - default: return false Alert - Função a ser executada caso botão Cancelar seja clicado
+
+---------Exemplo-------------
+	$.Alert('Teste Confirma',{
+		style:'danger',
+		tipo: 'C',
+		acOK:function(){
+			alert('OK');
+		},
+		acCancelar:function(){
+			alert('Cancel');
+		},
+		OK: 'Sim',
+		Cancelar: 'Não'
+	});
+	
+Veja o Arquivo Exemplo.html para ver exemplo funcional
+
+
+
+
