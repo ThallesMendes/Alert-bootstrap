@@ -41,8 +41,8 @@
 		$("#alerta").css({'top':top,'left':left});
 		$("#alerta").show();
 		$('#mascara-alerta').css({'width':larguraTela,'height':alturaTela});
-        $('#mascara-alerta').fadeIn(200);
-        $('#mascara-alerta').fadeTo("slow",0.8);
+        $('#mascara-alerta').fadeIn(1);
+        $('#mascara-alerta').fadeTo("slow",0.2);
 		$("#alert-ok").click(function(){
 			config.acOK();	
 			$('#alerta').hide();
