@@ -1,4 +1,13 @@
 .alerta{
     display:none;
     position:absolute;
+	z-index: 9900000;
+}
+#mascara-alerta{
+    display:none;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:9000000;
+    background-color:#000;
 }

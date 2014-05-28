@@ -31,21 +31,31 @@
 					'<p>'+ mensagem +'</p>' +							  
 					'<br>' +								
 					'<p><a class="btn btn-'+ config.style +'" href="#" id="alert-ok">'+ config.OK +'</a> ' + cancelar + '</div>';
+		var mascara = '<div id="mascara-alerta"></div>';
+					   	
 		$('body').append(html);
+		$('body').append(mascara);
 		var left = ($(window).width() /2) - ( $("#alerta").width() / 2 );
-		var top = ($(window).height() / 2) - ( $("#alerta").height() / 2 );
+		var top = ($(window).height() / 3) - ( $("#alerta").height() / 2 );
 							
 		$("#alerta").css({'top':top,'left':left});
-		$("#alerta").show();	
+		$("#alerta").show();
+		$('#mascara-alerta').css({'width':larguraTela,'height':alturaTela});
+        $('#mascara-alerta').fadeIn(200);
+        $('#mascara-alerta').fadeTo("slow",0.8);
 		$("#alert-ok").click(function(){
 			config.acOK();	
 			$('#alerta').hide();
-			$('#alerta').remove();			
+			$('#mascara-alerta').hide();
+			$('#alerta').remove();	
+			$('#mascara-alerta').remove();
 		});
 		$('#alert-cancel').click(function() {
 			config.acCancelar();
 			$('#alerta').hide();
-			$('#alerta').remove();			
+			$('#mascara-alerta').hide();
+			$('#alerta').remove();	
+			$('#mascara-alerta').remove();		
 		});	
 	};
 })(jQuery);
